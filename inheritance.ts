@@ -1,6 +1,8 @@
 class Departmentt{
 
-    private employees:string[]=[];  
+    // private employees:string[]=[]; 
+    protected employees:string[]=[];  
+
 
     constructor(private readonly id:string,public name:string){  
     }
@@ -31,6 +33,13 @@ class AccountingDep extends Departmentt{
         super(id,'IT')
     }
 
+    addEmploye(name: string){
+        if (name === 'maruth') {
+            return;
+        }
+        this.employees.push(name)
+    }
+
 addRole(text:string){
     this.roles.push(text);
 }
@@ -49,10 +58,16 @@ it.name='paxel'
 it.printEmployee();
 
 
-console.log(it)
+console.log(it) 
 
 const level = new AccountingDep('2',[])
 
 level.addRole('something curious')
+
+account.addEmploye('dharun')
+account.addEmploye('dhashin')
+account.addEmploye('pari')
+
 level.printRole();
+account.printEmployee();
 
